@@ -1,4 +1,4 @@
-const repo = "__REPO__";
+﻿const repo = "https://github.com/havocboxmedia/PEAKVR-Havoc";
 
 const setLinks = (selector, suffix = "") => {
   document.querySelectorAll(selector).forEach((el) => {
@@ -6,7 +6,7 @@ const setLinks = (selector, suffix = "") => {
   });
 };
 
-if (!repo.includes("__REPO__")) {
+if (!repo.includes("https://github.com/havocboxmedia/PEAKVR-Havoc")) {
   setLinks("[data-github]");
   setLinks("[data-download]", "/releases/latest");
   setLinks("[data-issues]", "/issues");
@@ -26,3 +26,4 @@ document.querySelectorAll(".feature-card, .gallery-shot, .install-panel, .suppor
     el.classList.add("reveal");
     observer.observe(el);
   });
+
