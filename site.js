@@ -6,11 +6,9 @@ const setLinks = (selector, suffix = "") => {
   });
 };
 
-if (!repo.includes("https://github.com/havocboxmedia/PEAKVR-Havoc")) {
-  setLinks("[data-github]");
-  setLinks("[data-download]", "/releases/latest");
-  setLinks("[data-issues]", "/issues");
-}
+setLinks("[data-github]");
+setLinks("[data-download]", "/releases/latest");
+setLinks("[data-issues]", "/issues");
 
 const observer = new IntersectionObserver((entries) => {
   for (const entry of entries) {
@@ -21,7 +19,7 @@ const observer = new IntersectionObserver((entries) => {
   }
 }, { threshold: 0.1 });
 
-document.querySelectorAll(".feature-card, .gallery-shot, .install-panel, .support-card")
+document.querySelectorAll(".feature-card, .install-panel, .support-card")
   .forEach((el) => {
     el.classList.add("reveal");
     observer.observe(el);
